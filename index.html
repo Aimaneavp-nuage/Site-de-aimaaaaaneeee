@@ -1,38 +1,280 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mon site</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            color: #666;
-            font-size: 1.2em;
-        }
-        .container {
-            background: white;
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 30px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CR7 — Cristiano Ronaldo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#060608;
+    --accent:#ffd700; /* or gold */
+    --muted:#bdbdbd;
+    --glass: rgba(255,255,255,0.06);
+    --max-width:1100px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:"Open Sans",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+    color:#fff;
+    background: linear-gradient(180deg,#020203 0%, #0b0b0d 100%);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  /* container */
+  .wrap{max-width:var(--max-width);margin:0 auto;padding:18px;}
+
+  /* NAV */
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:12px;padding:12px 0;
+  }
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{
+    width:48px;height:48px;border-radius:8px;
+    background:linear-gradient(135deg,var(--accent),#ffb400);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;color:#000;font-family:"Montserrat",sans-serif;
+    box-shadow:0 6px 18px rgba(0,0,0,0.5);
+  }
+  .brand h1{font-size:16px;margin:0;font-family:"Montserrat",sans-serif;letter-spacing:0.6px}
+  .nav a{color:var(--muted);text-decoration:none;font-weight:600}
+  .nav a.cta{background:var(--accent);color:#000;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:700}
+
+  /* HERO */
+  .hero{
+    position:relative;
+    margin:14px 0 24px;
+    border-radius:12px;
+    overflow:hidden;
+    min-height:56vh;
+    display:flex;align-items:center;
+    background:
+      radial-gradient(ellipse at center, rgba(255,255,255,0.02), transparent 20%),
+      linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.6));
+  }
+  .hero .bg-img{
+    position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(0.42);
+  }
+  /* large "7" in background using pseudo element */
+  .hero::after{
+    content:"7";
+    position:absolute;right:6%;top:6%;
+    font-family:"Montserrat",sans-serif;
+    font-weight:900;
+    font-size:36vw;line-height:0.9;
+    color:rgba(255,215,0,0.06); /* subtle gold big 7 */
+    pointer-events:none;
+    transform:translateY(-6%);
+    mix-blend-mode:screen;
+  }
+  .hero-inner{position:relative;z-index:2;padding:36px;display:flex;gap:18px;align-items:center}
+  .hero-left{flex:1}
+  .hero-left h2{font-family:"Montserrat",sans-serif;font-size:28px;margin:0 0 8px}
+  .hero-left p{color:var(--muted);margin:0 0 18px}
+  .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{background:var(--accent);color:#000;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+  .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--muted)}
+
+  .hero-right{width:240px;flex-shrink:0;display:flex;justify-content:center}
+  .hero-right img{width:220px;border-radius:12px;box-shadow:0 14px 40px rgba(0,0,0,0.6);border:4px solid rgba(255,255,255,0.03);}
+
+  /* sections */
+  section{padding:28px 0;border-top:1px solid rgba(255,255,255,0.03)}
+  h3{font-family:"Montserrat",sans-serif;margin:0 0 6px}
+  .muted{color:var(--muted);font-size:15px}
+  .grid{display:grid;grid-template-columns:1fr 320px;gap:22px;align-items:start}
+  .card{background:var(--glass);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.45)}
+  .stats{display:flex;gap:12px;justify-content:space-between;margin-top:12px}
+  .stat{flex:1;background:rgba(255,255,255,0.03);padding:10px;border-radius:8px;text-align:center}
+  .stat h4{margin:0;font-size:18px}
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px;display:block}
+  .fullwidth{grid-column:1/-1}
+
+  /* responsive */
+  @media (max-width:900px){
+    .grid{grid-template-columns:1fr}
+    .hero{min-height:48vh}
+    .hero-right{display:none}
+    .hero::after{font-size:56vw;right:-6%}
+    .gallery img{height:100px}
+  }
+
+  /* footer */
+  footer{padding:26px 0;text-align:center;color:var(--muted);font-size:14px}
+  /* small enhancements */
+  a {transition:all .18s ease}
+  .btn:hover{transform:translateY(-3px)}
+  .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;padding:18px;z-index:999}
+  .lightbox img{max-width:95%;max-height:90%;border-radius:10px}
+  .lightbox.open{display:flex}
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>Bienvenue sur mon site</h1>
-        <p>Ceci est une page simple en HTML et CSS, prête à être déployée sur Vercel.</p>
+  <div class="wrap nav">
+    <div class="brand">
+      <div class="logo">CR7</div>
+      <div>
+        <h1>Cristiano Ronaldo</h1>
+        <div class="muted" style="font-size:13px">Joueur • Légende • #7</div>
+      </div>
     </div>
+    <nav>
+      <a href="#about">À propos</a> &nbsp; • &nbsp;
+      <a href="#palmares">Palmarès</a> &nbsp; • &nbsp;
+      <a href="#galerie">Galerie</a> &nbsp; • &nbsp;
+      <a class="cta" href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="bg-img" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg');"></div>
+    <div class="wrap hero-inner">
+      <div class="hero-left">
+        <h2>Cristiano Ronaldo — CR7</h2>
+        <p class="muted">Attaquant, multiple champion et icône mondiale du football. Retrouve ici sa biographie, son palmarès et une galerie de ses plus grands moments.</p>
+        <div class="actions">
+          <a class="btn" href="#galerie">Voir la galerie</a>
+          <a class="ghost" href="https://fr.wikipedia.org/wiki/Cristiano_Ronaldo" target="_blank" rel="noopener">Lire sa fiche (Wikipedia)</a>
+        </div>
+        <div class="stats" style="margin-top:18px">
+          <div class="stat">
+            <h4>800+</h4>
+            <div class="muted">Matchs</div>
+          </div>
+          <div class="stat">
+            <h4>700+</h4>
+            <div class="muted">Buts</div>
+          </div>
+          <div class="stat">
+            <h4>5</h4>
+            <div class="muted">Ballons d'Or</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Cristiano_Ronaldo_2018_%28cropped%29.jpg" alt="Cristiano Ronaldo portrait">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <div class="wrap">
+    <section id="about" class="card">
+      <h3>À propos</h3>
+      <p class="muted">Cristiano Ronaldo dos Santos Aveiro (né le 5 février 1985) est un footballeur portugais considéré comme l’un des meilleurs joueurs de l’histoire. Connu pour sa vitesse, sa technique, et son sens du but, il a brillé dans plusieurs clubs européens et en sélection nationale.</p>
+      <div style="display:flex;gap:12px;margin-top:14px;flex-wrap:wrap">
+        <div class="card" style="flex:1;min-width:220px">
+          <h4 style="margin:0 0 6px">Style de jeu</h4>
+          <p class="muted" style="margin:0">Rapide, puissant, excellent dans les duels aériens, et redoutable devant le but.</p>
+        </div>
+        <div class="card" style="min-width:220px">
+          <h4 style="margin:0 0 6px">Numéro iconique</h4>
+          <p class="muted" style="margin:0">Le <strong>#7</strong> est devenu synonyme de sa marque et de son identité footballistique.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PALMARES -->
+    <section id="palmares" style="margin-top:16px">
+      <div class="grid">
+        <div class="card">
+          <h3>Palmarès (sélection)</h3>
+          <ul class="muted" style="line-height:1.8;padding-left:18px">
+            <li>Champion d'Europe (UEFA) — Portugal</li>
+            <li>Médaillé d'or aux Jeux (si applicable selon année)</li>
+            <li>Multiples titres nationaux (Angleterre, Espagne, Italie)</li>
+            <li>5× Ballon d'Or</li>
+            <li>Meilleur buteur de l'histoire de la Ligue des Champions</li>
+          </ul>
+        </div>
+        <aside class="card">
+          <h4>Faits rapides</h4>
+          <p class="muted" style="margin:6px 0">Né : 5 février 1985<br>Nationalité : Portugaise<br>Position : Attaquant</p>
+          <a class="btn" href="#contact">Soutenir CR7</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="galerie" style="margin-top:16px" class="card">
+      <h3>Galerie</h3>
+      <p class="muted">Quelques photos emblématiques — clique pour agrandir.</p>
+
+      <div class="gallery" style="margin-top:12px">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" alt="Ronaldo action 1" data-large="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Cristiano_Ronaldo_2016.jpg" alt="Ronaldo action 2" data-large="https://upload.wikimedia.org/wikipedia/commons/0/0c/Cristiano_Ronaldo_2016.jpg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Cristiano_Ronaldo_celebration.jpg" alt="Ronaldo célébration" data-large="https://upload.wikimedia.org/wikipedia/commons/5/53/Cristiano_Ronaldo_celebration.jpg">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Ronaldo_goal.jpg" alt="But Ronaldo" data-large="https://upload.wikimedia.org/wikipedia/commons/3/3a/Ronaldo_goal.jpg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/CR7_Juve.jpg" alt="Ronaldo Juventus" data-large="https://upload.wikimedia.org/wikipedia/commons/f/f6/CR7_Juve.jpg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/CR7_portugal.jpg" alt="Ronaldo Portugal" data-large="https://upload.wikimedia.org/wikipedia/commons/6/6b/CR7_portugal.jpg">
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="margin-top:16px" class="card">
+      <h3>Contact & réseaux</h3>
+      <p class="muted">Ceci est une page vitrine ; pour plus d'infos ou demandes presse, dirigez-vous vers les profils officiels.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+        <a class="ghost" href="https://www.instagram.com/cristiano" target="_blank" rel="noopener">Instagram</a>
+        <a class="ghost" href="https://twitter.com/Cristiano" target="_blank" rel="noopener">Twitter</a>
+        <a class="ghost" href="https://www.facebook.com/Cristiano" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <div style="opacity:.8">© Site fan — Créé par toi • Images provenant de Wikimedia Commons</div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="Agrandir image">
+  </div>
+
+<script>
+  // Smooth scroll for links
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      e.preventDefault();
+      const id = a.getAttribute('href');
+      if(id === "#" || id === "") return;
+      const el = document.querySelector(id);
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+
+  // Simple lightbox for gallery
+  document.querySelectorAll('.gallery img').forEach(img=>{
+    img.style.cursor='zoom-in';
+    img.addEventListener('click', e=>{
+      const src = img.dataset.large || img.src;
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightboxImg');
+      lbImg.src = src;
+      lb.classList.add('open');
+    });
+  });
+  function closeLightbox(){
+    const lb = document.getElementById('lightbox');
+    lb.classList.remove('open');
+    document.getElementById('lightboxImg').src = '';
+  }
+
+  // Accessibility: close on Esc
+  document.addEventListener('keydown', e=>{
+    if(e.key === 'Escape') closeLightbox();
+  });
+</script>
 </body>
 </html>
