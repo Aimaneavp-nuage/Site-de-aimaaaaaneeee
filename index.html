@@ -5,138 +5,162 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CR7 - Ronaldo Fan Site</title>
 <style>
+  /* Reset */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
   body {
     margin: 0; padding: 0;
-    background-color: #0b1c3f;
-    color: #e6eaf0;
+    background: linear-gradient(135deg, #121212 0%, #2c2c3a 100%);
+    color: #e0e0e0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.5;
+    line-height: 1.6;
   }
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
-    background: #132c6b;
+    background: #1f1f2e;
     display: flex;
     gap: 15px;
-    padding: 12px 20px;
+    padding: 15px 20px;
     overflow-x: auto;
     white-space: nowrap;
     z-index: 1000;
   }
   nav a {
-    color: #72aaff;
+    color: #a3c9ff;
     font-weight: 600;
     text-decoration: none;
     padding-bottom: 4px;
     border-bottom: 2px solid transparent;
     transition: border-color 0.3s ease;
   }
-  nav a:hover {
-    border-bottom-color: #a4c8ff;
+  nav a:hover, nav a:focus {
+    border-bottom-color: #87aaff;
   }
   header {
-    padding: 80px 20px 40px 20px;
-    background: url("https://images.unsplash.com/photo-1547573865-6c3d490abf76?auto=format&fit=crop&w=1350&q=80") no-repeat center/cover;
-    color: #5ea1ff;
-    text-shadow: 0 0 10px rgba(0,0,0,0.9);
+    padding: 90px 20px 40px 20px;
+    background: url("https://cdn.pixabay.com/photo/2019/07/12/21/41/ronaldo-4335917_960_720.jpg") no-repeat center/cover;
+    color: #86a8e7;
+    text-shadow: 0 0 12px rgba(0,0,0,0.9);
     min-height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
   header h1 {
-    margin: 0 0 15px;
-    font-size: 3rem;
+    margin: 0 0 20px;
+    font-size: 3.2rem;
   }
   header p.intro {
-    max-width: 650px;
-    font-size: 1.2rem;
-    color: #a1baffcc;
+    max-width: 700px;
+    font-size: 1.3rem;
+    color: #becffacc;
   }
   main {
-    max-width: 900px;
-    margin: 30px auto 60px;
-    padding: 0 15px;
+    max-width: 960px;
+    margin: 40px auto 80px;
+    padding: 0 20px;
   }
   section {
-    margin-bottom: 50px;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(41, 121, 255, 0.4);
-  }
-  section:nth-child(odd) {
-    background: #1b2d6d;
+    margin-bottom: 60px;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #222236;
+    box-shadow: 0 0 25px rgba(120,130,220,0.3);
   }
   section:nth-child(even) {
-    background: #223f8d;
+    background-color: #2f3048;
   }
   section h2 {
-    color: #a1c9ff;
+    color: #9ec1ff;
     margin-top: 0;
     font-weight: 700;
+    font-size: 2rem;
   }
+  p {
+    font-size: 1.05rem;
+    color: #d6d8e0;
+  }
+  /* Galerie */
   .gallery {
     display: flex;
-    gap: 12px;
+    gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
   }
   .gallery img {
-    width: calc(33% - 8px);
-    border-radius: 10px;
-    box-shadow: 0 0 15px #5ea1ffbb;
+    width: calc(33% - 10px);
+    border-radius: 12px;
+    box-shadow: 0 0 18px #7a90ffbb;
     object-fit: cover;
-    height: 120px;
+    height: 140px;
     transition: transform 0.3s ease;
+    cursor: pointer;
   }
-  .gallery img:hover {
-    transform: scale(1.1);
+  .gallery img:hover, .gallery img:focus {
+    transform: scale(1.12);
+    box-shadow: 0 0 28px #a6bbffcc;
   }
+  /* Stats */
   .stats {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
   }
   .stat {
-    flex: 1 1 130px;
-    background: #154188;
-    padding: 20px;
-    border-radius: 12px;
+    flex: 1 1 140px;
+    background: #3b3c60;
+    padding: 25px;
+    border-radius: 15px;
     text-align: center;
-    box-shadow: 0 0 18px #5ea1ffaa;
+    box-shadow: 0 0 22px #7a90ffcc;
   }
   .stat-number {
-    font-size: 2.8rem;
-    color: #72aaff;
+    font-size: 3rem;
+    color: #a3c9ff;
     font-weight: 700;
   }
   .stat-label {
-    margin-top: 8px;
-    font-size: 1.15rem;
-    color: #aac6ffcc;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #becffa;
   }
+  /* Vidéo */
   .video-wrapper {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 0 20px #72aaffcc;
+    border-radius: 15px;
+    box-shadow: 0 0 30px #8fa1ffbb;
   }
   .video-wrapper iframe {
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 0;
+    border: none;
   }
+  /* Contact */
   #contact p a {
-    color: #72aaff;
+    color: #87aaff;
     font-weight: 600;
     text-decoration: none;
   }
-  #contact p a:hover {
+  #contact p a:hover, #contact p a:focus {
     text-decoration: underline;
+  }
+  /* Responsive */
+  @media (max-width: 700px) {
+    .gallery img {
+      width: calc(50% - 10px);
+      height: 130px;
+    }
+    .stat {
+      flex: 1 1 100%;
+    }
   }
 </style>
 </head>
@@ -157,23 +181,22 @@
 <header id="accueil">
   <h1>Cristiano Ronaldo - Légende du football</h1>
   <p class="intro">
-    Cristiano Ronaldo, l’icône mondiale du football, reconnu pour sa vitesse, sa puissance et ses records incroyables.  
-    Depuis ses débuts modestes à Madère jusqu’à la gloire internationale, découvrez l’histoire d’un champion hors norme,  
-    ses exploits marquants, et son impact légendaire sur le football moderne.
+    Cristiano Ronaldo, icône mondiale du football, reconnu pour sa vitesse, sa puissance et ses records incroyables.<br>
+    Depuis ses débuts à Madère jusqu’à la gloire internationale, découvrez l’histoire d’un champion hors norme, ses exploits marquants et son impact légendaire.
   </p>
 </header>
 
 <main>
   <section id="biographie">
     <h2>Biographie</h2>
-    <p>Né le 5 février 1985 à Funchal, Cristiano Ronaldo a commencé au Sporting CP avant de briller à Manchester United et Real Madrid.  
-      Sa rigueur et sa détermination ont façonné une carrière hors pair.</p>
+    <p>Né le 5 février 1985 à Funchal, Cristiano Ronaldo a commencé au Sporting CP avant de briller à Manchester United et Real Madrid.<br>
+    Sa rigueur et sa détermination ont façonné une carrière hors pair.</p>
   </section>
 
   <section id="real">
     <h2>Carrière au Real Madrid</h2>
-    <p>Recruté en 2009, Ronaldo est devenu le meilleur buteur historique du club, avec plus de 450 buts, plusieurs Ballons d’Or,  
-      et une domination absolue en Liga et en Ligue des Champions.</p>
+    <p>Recruté en 2009, Ronaldo est devenu le meilleur buteur historique du club, avec plus de 450 buts, plusieurs Ballons d’Or,<br>
+    et une domination absolue en Liga et en Ligue des Champions.</p>
   </section>
 
   <section id="saison2008">
@@ -183,10 +206,10 @@
 
   <section id="exploits">
     <h2>Exploits marquants</h2>
-    <div class="gallery">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..." alt="Célébration de Ronaldo" />
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..." alt="Ronaldo face à l'Atlético" />
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..." alt="Ronaldo marquant un but" />
+    <div class="gallery" tabindex="0" aria-label="Galerie photos de Ronaldo">
+      <img src="https://cdn.pixabay.com/photo/2019/07/12/21/41/ronaldo-4335917_960_720.jpg" alt="Cristiano Ronaldo célébration" />
+      <img src="https://cdn.pixabay.com/photo/2018/07/16/15/47/cristiano-raldo-3540466_960_720.jpg" alt="Cristiano Ronaldo en action" />
+      <img src="https://cdn.pixabay.com/photo/2019/08/05/22/09/ronaldo-4382621_960_720.jpg" alt="Cristiano Ronaldo tir au but" />
     </div>
   </section>
 
@@ -210,17 +233,21 @@
 
   <section id="galerie">
     <h2>Galerie</h2>
-    <div class="gallery">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..." alt="Cristiano Ronaldo portrait" />
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..." alt="Cristiano Ronaldo en action" />
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..." alt="Ronaldo célébrant un but" />
+    <div class="gallery" tabindex="0" aria-label="Galerie photos supplémentaires de Ronaldo">
+      <img src="https://cdn.pixabay.com/photo/2018/07/16/15/47/cristiano-raldo-3540466_960_720.jpg" alt="Cristiano Ronaldo portrait" />
+      <img src="https://cdn.pixabay.com/photo/2019/08/05/22/09/ronaldo-4382621_960_720.jpg" alt="Cristiano Ronaldo en action" />
+      <img src="https://cdn.pixabay.com/photo/2019/07/12/21/41/ronaldo-4335917_960_720.jpg" alt="Ronaldo célébrant un but" />
     </div>
   </section>
 
   <section id="video">
     <h2>Vidéo</h2>
     <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/ozv8ke3sHaA" title="Vidéo Cristiano Ronaldo" allowfullscreen></iframe>
+      <iframe 
+        src="https://www.youtube.com/embed/BZd6U4GepXc" 
+        title="Compilation des meilleurs buts de Cristiano Ronaldo" 
+        allowfullscreen 
+        loading="lazy"></iframe>
     </div>
   </section>
 
