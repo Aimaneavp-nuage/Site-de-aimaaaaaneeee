@@ -3,431 +3,206 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>CR7 — Cristiano Ronaldo Fan Site</title>
+<title>CR7 - Ronaldo Fan Site</title>
 <style>
-  :root {
-    --bg-dark: #0b1c3f;
-    --bg-medium: #132c6b;
-    --bg-light: #1e3a8a;
-    --accent-blue: #2979ff;
-    --text-light: #e6eaf0;
-    --text-muted: #b0bedf;
-    --radius: 12px;
-  }
-
-  /* Reset */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  body, html {
+  body {
     margin: 0; padding: 0;
-    background: var(--bg-dark);
-    color: var(--text-light);
-    font-family: 'Open Sans', Arial, sans-serif;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+    background-color: #0b1c3f;
+    color: #e6eaf0;
+    font-family: Arial, sans-serif;
   }
-  a {
-    color: var(--text-light);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  a:hover, a:focus {
-    color: var(--accent-blue);
-    outline: none;
-  }
-
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
-    background: var(--bg-medium);
+    background: #132c6b;
     display: flex;
-    align-items: center;
+    gap: 15px;
     padding: 12px 20px;
-    z-index: 1000;
     overflow-x: auto;
-    box-shadow: 0 2px 10px rgba(41, 121, 255, 0.4);
-  }
-  nav .logo {
-    font-weight: 800;
-    font-size: 1.6rem;
-    color: var(--accent-blue);
-    margin-right: 30px;
-    flex-shrink: 0;
-    user-select: none;
-  }
-  nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0; padding: 0;
-    gap: 25px;
-  }
-  nav ul li a {
-    font-weight: 600;
     white-space: nowrap;
-    padding: 6px 0;
-    border-bottom: 3px solid transparent;
+    z-index: 1000;
   }
-  nav ul li a.active {
-    color: var(--accent-blue);
-    border-bottom-color: var(--accent-blue);
-  }
-
-  header.hero {
-    margin-top: 56px;
-    min-height: 65vh;
-    background: url('https://upload.wikimedia.org/wikipedia/commons/4/4f/Cristiano_Ronaldo_2022_%28cropped%29.jpg') center/cover no-repeat;
-    position: relative;
-    padding: 50px 25px 60px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: inset 0 0 0 1000px rgba(11,28,63,0.7);
-  }
-  header.hero::after {
-    content: "7";
-    position: absolute;
-    top: 15%;
-    right: 5%;
-    font-size: 25vw;
-    font-weight: 900;
-    color: rgba(41, 121, 255, 0.12);
-    font-family: 'Montserrat', sans-serif;
-    pointer-events: none;
-    user-select: none;
-    z-index: 0;
-  }
-  header.hero > div {
-    position: relative;
-    z-index: 1;
-    max-width: 600px;
-  }
-  header.hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    margin: 0 0 18px 0;
-    color: var(--accent-blue); /* Titre bleu lumineux */
-  }
-  header.hero p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin-bottom: 15px;
-    color: var(--text-muted);
-  }
-  header.hero .btn {
-    display: inline-block;
-    background: var(--accent-blue);
-    padding: 14px 32px;
-    border-radius: var(--radius);
-    font-weight: 700;
-    color: white;
-    box-shadow: 0 6px 18px rgba(41, 121, 255, 0.4);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  nav a {
+    color: #2979ff;
+    font-weight: bold;
     text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
   }
-  header.hero .btn:hover,
-  header.hero .btn:focus {
-    background-color: #3f8cff;
-    outline: none;
+  nav a:hover {
+    border-bottom-color: #5393ff;
   }
-
-  main.wrap {
-    max-width: 1100px;
-    margin: 50px auto 80px;
-    padding: 0 20px;
+  header {
+    padding: 80px 20px 20px 20px;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Cristiano_Ronaldo_2022_%28cropped%29.jpg") no-repeat center/cover;
+    color: #2979ff;
+    text-shadow: 0 0 10px black;
+    min-height: 60vh;
+  }
+  header h1 {
+    margin: 0 0 15px;
+    font-size: 3rem;
+  }
+  header p {
+    max-width: 600px;
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 15px 40px;
   }
   section {
-    margin-bottom: 70px;
-    padding: 30px 30px 40px;
-    border-radius: var(--radius);
-    background-color: var(--bg-medium);
-    box-shadow: 0 6px 20px rgba(41, 121, 255, 0.3);
-  }
-  section:nth-child(odd) {
-    background-color: var(--bg-light);
+    margin-bottom: 50px;
+    background: #132c6b;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 0 20px rgba(41, 121, 255, 0.4);
   }
   section h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 2.5rem;
-    margin-bottom: 18px;
-    color: var(--text-light);
+    color: #5393ff;
+    margin-top: 0;
   }
-  p {
-    font-weight: 400;
-    font-size: 1.15rem;
-    line-height: 1.6;
-    color: var(--text-muted);
-  }
-
-  /* Moments grid */
-  .moments-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 22px;
-    margin-top: 18px;
-  }
-  .moment-card {
-    background: rgba(41, 121, 255, 0.15);
-    border-radius: var(--radius);
-    padding: 16px;
+  .gallery {
     display: flex;
-    gap: 16px;
-    box-shadow: 0 8px 28px rgba(41, 121, 255, 0.3);
-    transition: box-shadow 0.3s ease;
+    gap: 12px;
+    flex-wrap: wrap;
   }
-  .moment-card:hover {
-    box-shadow: 0 14px 40px rgba(41, 121, 255, 0.5);
-  }
-  .moment-image {
-    width: 130px;
-    height: 90px;
+  .gallery img {
+    width: calc(33% - 8px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #2979ff;
     object-fit: cover;
-    border-radius: var(--radius);
-    flex-shrink: 0;
+    height: 120px;
   }
-  .moment-text {
+  .stats {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: var(--text-light);
-  }
-  .moment-text strong {
-    font-size: 1.2rem;
-    margin-bottom: 6px;
-  }
-  .moment-text p {
-    margin: 0;
-    font-size: 1rem;
-    color: var(--text-muted);
-  }
-
-  /* Stats grid */
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
     gap: 25px;
-    margin-top: 28px;
+    flex-wrap: wrap;
   }
-  .stat-card {
-    background: rgba(41, 121, 255, 0.15);
-    border-radius: var(--radius);
-    padding: 22px;
+  .stat {
+    flex: 1 1 120px;
+    background: #1e3a8a;
+    padding: 20px;
+    border-radius: 12px;
     text-align: center;
-    box-shadow: 0 8px 26px rgba(41, 121, 255, 0.35);
-    transition: transform 0.3s ease;
-  }
-  .stat-card:hover {
-    transform: translateY(-8px);
+    box-shadow: 0 0 15px #2979ff;
   }
   .stat-number {
-    font-weight: 800;
-    font-size: 2.6rem;
-    color: var(--accent-blue);
+    font-size: 2.5rem;
+    color: #2979ff;
+    font-weight: 700;
   }
   .stat-label {
-    font-weight: 600;
+    margin-top: 6px;
     font-size: 1.1rem;
-    color: var(--text-muted);
+    color: #b0bedf;
   }
-
-  /* Gallery */
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
-    gap: 16px;
-    margin-top: 20px;
-  }
-  .gallery-grid img {
-    width: 100%;
-    height: 110px;
-    object-fit: cover;
-    border-radius: var(--radius);
-    box-shadow: 0 8px 28px rgba(0,0,0,0.3);
-    cursor: pointer;
-    transition: transform 0.25s ease;
-  }
-  .gallery-grid img:hover {
-    transform: scale(1.07);
-  }
-
-  /* Video */
   .video-wrapper {
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: 56.25%; /* 16:9 */
     height: 0;
     overflow: hidden;
-    border-radius: var(--radius);
-    box-shadow: 0 8px 30px rgba(41, 121, 255, 0.45);
-    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #2979ff;
   }
   .video-wrapper iframe {
     position: absolute;
-    top:0; left:0; width: 100%; height: 100%;
-    border: none;
-    border-radius: var(--radius);
-  }
-
-  /* Contact */
-  #contact {
-    background: var(--bg-light);
-    border-radius: var(--radius);
-    padding: 40px 35px;
-    box-shadow: 0 10px 35px rgba(41, 121, 255, 0.5);
-    text-align: center;
-  }
-  #contact p {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    max-width: 700px;
-    margin: 0 auto 25px auto;
-  }
-  #contact .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-  }
-  #contact .social-links a {
-    display: inline-block;
-    background: var(--accent-blue);
-    padding: 10px 22px;
-    border-radius: var(--radius);
-    font-weight: 700;
-    color: white;
-    box-shadow: 0 6px 20px rgba(41, 121, 255, 0.5);
-    transition: background-color 0.3s ease;
-  }
-  #contact .social-links a:hover {
-    background-color: #5393ff;
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 20px 15px;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-  }
-
-  /* Responsive */
-  @media (max-width: 900px) {
-    header.hero {
-      min-height: 50vh;
-      padding: 40px 20px 50px 25px;
-    }
-    header.hero h1 {
-      font-size: 2.4rem;
-    }
-    nav ul {
-      gap: 15px;
-    }
-  }
-  @media (max-width: 480px) {
-    header.hero h1 {
-      font-size: 1.9rem;
-    }
-    .stat-card {
-      padding: 16px 12px;
-    }
-    .stat-number {
-      font-size: 2rem;
-    }
-    .gallery-grid img {
-      height: 90px;
-    }
-    nav .logo {
-      margin-right: 10px;
-      font-size: 1.3rem;
-    }
+    width: 100%;
+    height: 100%;
+    border: 0;
   }
 </style>
 </head>
 <body>
 
-<nav aria-label="Menu principal">
-  <div class="logo" tabindex="0">CR7</div>
-  <ul id="nav-links">
-    <li><a href="#accueil" class="active">Accueil</a></li>
-    <li><a href="#biographie">Biographie</a></li>
-    <li><a href="#real">Real Madrid</a></li>
-    <li><a href="#saison2008">Saison 2008</a></li>
-    <li><a href="#exploits">Exploits</a></li>
-    <li><a href="#stats">Statistiques</a></li>
-    <li><a href="#galerie">Galerie</a></li>
-    <li><a href="#video">Vidéo</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+<nav>
+  <a href="#accueil">Accueil</a>
+  <a href="#biographie">Biographie</a>
+  <a href="#real">Real Madrid</a>
+  <a href="#saison2008">Saison 2008</a>
+  <a href="#exploits">Exploits</a>
+  <a href="#stats">Statistiques</a>
+  <a href="#galerie">Galerie</a>
+  <a href="#video">Vidéo</a>
+  <a href="#contact">Contact</a>
 </nav>
 
-<header class="hero" id="accueil" tabindex="0" aria-label="Image de Cristiano Ronaldo avec numéro 7 en arrière-plan">
-  <div>
-    <h1>Cristiano Ronaldo — Légende du football</h1>
-    <p>Rapide, puissant, décisif — Un champion au parcours exceptionnel.</p>
-    <p>Cristiano Ronaldo, surnommé CR7, est non seulement l’un des plus grands footballeurs de tous les temps, mais aussi un véritable phénomène culturel mondial.  
-    Sa carrière remarquable s’étend sur plus de 20 ans, avec une discipline de fer, un travail acharné et une passion inégalée pour le football.  
-    Sa polyvalence lui permet de jouer à plusieurs postes offensifs avec une efficacité redoutable.  
-    Il est également une icône en dehors du terrain, influençant la mode, la philanthropie et inspirant des millions de fans.</p>
-    <p>Découvrez sur ce site ses exploits, records, performances historiques, photos, et une vidéo qui raconte sa légende.</p>
-    <a href="#biographie" class="btn" tabindex="0">Découvrir sa biographie</a>
-  </div>
+<header id="accueil">
+  <h1>Cristiano Ronaldo - Légende du football</h1>
+  <p>Rapide, puissant, décisif — un champion au parcours exceptionnel. Découvrez ses exploits, records, et une vidéo exclusive.</p>
 </header>
 
-<main class="wrap" role="main">
-
-  <section id="biographie" tabindex="0" aria-labelledby="biographie-title">
-    <h2 id="biographie-title">Biographie</h2>
-    <p>Né le 5 février 1985 à Funchal, Madère, Portugal, Cristiano Ronaldo a rapidement montré un talent exceptionnel pour le football.  
-    Il commence sa carrière professionnelle au Sporting Portugal avant d’être repéré par Manchester United, où il devient une star mondiale.  
-    Reconnu pour son éthique de travail et sa détermination, il est devenu l’un des joueurs les plus titrés et les plus aimés du football mondial.</p>
+<main>
+  <section id="biographie">
+    <h2>Biographie</h2>
+    <p>Né le 5 février 1985 à Funchal, Cristiano Ronaldo a débuté sa carrière au Sporting CP avant d’exploser à Manchester United. Véritable icône mondiale, il est reconnu pour sa discipline et ses records incroyables.</p>
   </section>
 
-  <section id="real" tabindex="0" aria-labelledby="real-title">
-    <h2 id="real-title">Carrière au Real Madrid</h2>
-    <p>Recruté par le Real Madrid en 2009 pour un transfert record, Ronaldo a explosé tous les compteurs avec le club espagnol.  
-    Pendant 9 saisons, il a inscrit plus de 450 buts, remportant 4 Ballons d’Or, 4 Ligue des Champions, et une multitude de titres nationaux et internationaux.</p>
-    <p>Ses saisons légendaires ont marqué l’histoire du club, notamment la saison 2014-2015 avec un record de buts en Liga.</p>
+  <section id="real">
+    <h2>Carrière au Real Madrid</h2>
+    <p>Arrivé en 2009, Ronaldo a marqué l'histoire du Real Madrid avec plus de 450 buts, 4 Ballons d’Or, et 4 Ligues des Champions, devenant un des meilleurs joueurs de l'histoire du club.</p>
   </section>
 
-  <section id="saison2008" tabindex="0" aria-labelledby="saison2008-title">
-    <h2 id="saison2008-title">Saison 2008 — Année exceptionnelle</h2>
-    <p>En 2008, Cristiano Ronaldo a connu une année phare avec Manchester United, remportant la Premier League et la Ligue des Champions.  
-    Il a aussi reçu son premier Ballon d’Or cette année-là, récompensant ses performances hors normes et son influence décisive sur le terrain.</p>
+  <section id="saison2008">
+    <h2>Saison 2008 - Année exceptionnelle</h2>
+    <p>Cette année-là, il remporte la Premier League, la Ligue des Champions et son premier Ballon d’Or, confirmant son statut de superstar mondiale.</p>
   </section>
 
-  <section id="exploits" tabindex="0" aria-labelledby="exploits-title">
-    <h2 id="exploits-title">Exploits marquants</h2>
-    <div class="moments-grid">
-      <article class="moment-card" tabindex="0">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Ronaldo_celebration_2018.jpg" alt="Cristiano Ronaldo en pleine célébration" class="moment-image" />
-        <div class="moment-text">
-          <strong>Celebration Iconique</strong>
-          <p>Sa célébration “Sii” est devenue un symbole mondial.</p>
-        </div>
-      </article>
-      <article class="moment-card" tabindex="0">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/CR7_vs_Atletico_2017.jpg" alt="Cristiano Ronaldo face à l'Atlético Madrid" class="moment-image" />
-        <div class="moment-text">
-          <strong>Hat-trick face à l’Atlético</strong>
-          <p>Un exploit décisif en Ligue des Champions 2017.</p>
-        </div>
-      </article>
-      <article class="moment-card" tabindex="0">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/CR7_Scorer_Ligue_des_Champions.jpg" alt="Cristiano Ronaldo marquant un but" class="moment-image" />
-        <div class="moment-text">
-          <strong>Plus de 940 buts</strong>
-          <p>Un des meilleurs buteurs de l’histoire du football.</p>
-        </div>
-      </article>
+  <section id="exploits">
+    <h2>Exploits marquants</h2>
+    <div class="gallery">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Ronaldo_celebration_2018.jpg" alt="Célébration de Ronaldo" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/CR7_vs_Atletico_2017.jpg" alt="Ronaldo face à l'Atlético" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/CR7_Scorer_Ligue_des_Champions.jpg" alt="Ronaldo marquant un but" />
     </div>
   </section>
 
-  <section id="stats" tabindex="0" aria-labelledby="stats-title">
-    <h2 id="stats-title">Statistiques</h2>
-    <div class="stats-grid">
-      <div class="stat-card" tabindex="0">
-        <div class="stat-number">800+</div>
+  <section id="stats">
+    <h2>Statistiques</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-number">1100+</div>
         <div class="stat-label">Matchs joués</div>
       </div>
-      <div class="stat-card" tabindex="0">
-        <div class="
+      <div class="stat">
+        <div class="stat-number">940+</div>
+        <div class="stat-label">Buts marqués</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">310+</div>
+        <div class="stat-label">Passes décisives</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerie">
+    <h2>Galerie</h2>
+    <div class="gallery">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Cristiano_Ronaldo_2018_%28cropped%29.jpg" alt="Cristiano Ronaldo portrait" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Cristiano_Ronaldo_2014.jpg" alt="Cristiano Ronaldo en action" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Cristiano_Ronaldo_2017.jpg" alt="Ronaldo célébrant un but" />
+    </div>
+  </section>
+
+  <section id="video">
+    <h2>Vidéo</h2>
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/ozv8ke3sHaA" title="Vidéo Cristiano Ronaldo" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Pour en savoir plus ou contacter, suivez ses réseaux sociaux officiels :</p>
+    <p>
+      <a href="https://twitter.com/Cristiano" target="_blank" rel="noopener noreferrer">Twitter</a> | 
+      <a href="https://www.instagram.com/cristiano/" target="_blank" rel="noopener noreferrer">Instagram</a> | 
+      <a href="https://www.facebook.com/Cristiano" target="_blank" rel="noopener noreferrer">Facebook</a>
+    </p>
+  </section>
+</main>
+
+</body>
+</html>
