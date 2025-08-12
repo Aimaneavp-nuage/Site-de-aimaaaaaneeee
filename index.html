@@ -5,65 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CR7 — Cristiano Ronaldo Fan Site</title>
 <style>
-  /* --- Variables --- */
   :root {
-    --color-bg-dark: #0b1c3f;
-    --color-bg-medium: #132c6b;
-    --color-bg-light: #1e3a8a;
-    --color-accent: #2979ff; /* bleu foudre */
-    --color-text-light: #e6eaf0;
-    --color-text-muted: #b0bedf;
-    --max-width: 1100px;
+    --bg-dark: #0b1c3f;
+    --bg-medium: #132c6b;
+    --bg-light: #1e3a8a;
+    --accent-blue: #2979ff;
+    --text-light: #e6eaf0;
+    --text-muted: #b0bedf;
     --radius: 12px;
-    --shadow: rgba(41, 121, 255, 0.4);
   }
 
-  /* --- Reset & Base --- */
+  /* Reset */
   *, *::before, *::after {
     box-sizing: border-box;
   }
   body, html {
     margin: 0; padding: 0;
-    height: 100%;
-    background: var(--color-bg-dark);
-    color: var(--color-text-light);
+    background: var(--bg-dark);
+    color: var(--text-light);
     font-family: 'Open Sans', Arial, sans-serif;
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
   a {
-    color: var(--color-text-light);
+    color: var(--text-light);
     text-decoration: none;
     transition: color 0.3s ease;
   }
   a:hover, a:focus {
-    color: var(--color-accent);
+    color: var(--accent-blue);
     outline: none;
   }
 
-  /* --- Navigation --- */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
-    background: var(--color-bg-medium);
+    background: var(--bg-medium);
     display: flex;
     align-items: center;
     padding: 12px 20px;
     z-index: 1000;
     overflow-x: auto;
-    box-shadow: 0 2px 10px var(--shadow);
-  }
-  nav::-webkit-scrollbar {
-    height: 6px;
-  }
-  nav::-webkit-scrollbar-thumb {
-    background: var(--color-accent);
-    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(41, 121, 255, 0.4);
   }
   nav .logo {
     font-weight: 800;
     font-size: 1.6rem;
-    color: var(--color-accent);
+    color: var(--accent-blue);
     margin-right: 30px;
     flex-shrink: 0;
     user-select: none;
@@ -79,16 +67,14 @@
     white-space: nowrap;
     padding: 6px 0;
     border-bottom: 3px solid transparent;
-    transition: border-color 0.3s ease, color 0.3s ease;
   }
   nav ul li a.active {
-    color: var(--color-accent);
-    border-bottom-color: var(--color-accent);
+    color: var(--accent-blue);
+    border-bottom-color: var(--accent-blue);
   }
 
-  /* --- Hero --- */
   header.hero {
-    margin-top: 56px; /* hauteur nav */
+    margin-top: 56px;
     min-height: 65vh;
     background: url('https://upload.wikimedia.org/wikipedia/commons/4/4f/Cristiano_Ronaldo_2022_%28cropped%29.jpg') center/cover no-repeat;
     position: relative;
@@ -120,21 +106,22 @@
     font-family: 'Playfair Display', serif;
     font-size: 3rem;
     margin: 0 0 18px 0;
+    color: var(--accent-blue); /* Titre bleu lumineux */
   }
   header.hero p {
     font-size: 1.2rem;
     line-height: 1.5;
     margin-bottom: 15px;
-    color: var(--color-text-muted);
+    color: var(--text-muted);
   }
   header.hero .btn {
     display: inline-block;
-    background: var(--color-accent);
+    background: var(--accent-blue);
     padding: 14px 32px;
     border-radius: var(--radius);
     font-weight: 700;
     color: white;
-    box-shadow: 0 6px 18px var(--shadow);
+    box-shadow: 0 6px 18px rgba(41, 121, 255, 0.4);
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-decoration: none;
@@ -145,9 +132,8 @@
     outline: none;
   }
 
-  /* --- Main Container --- */
   main.wrap {
-    max-width: var(--max-width);
+    max-width: 1100px;
     margin: 50px auto 80px;
     padding: 0 20px;
   }
@@ -155,29 +141,27 @@
     margin-bottom: 70px;
     padding: 30px 30px 40px;
     border-radius: var(--radius);
-    background-color: var(--color-bg-medium);
-    box-shadow: 0 6px 20px var(--shadow);
+    background-color: var(--bg-medium);
+    box-shadow: 0 6px 20px rgba(41, 121, 255, 0.3);
   }
-  /* Alternate background for sections */
   section:nth-child(odd) {
-    background-color: var(--color-bg-light);
+    background-color: var(--bg-light);
   }
-
   section h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 2.5rem;
     margin-bottom: 18px;
-    color: var(--color-text-light);
+    color: var(--text-light);
   }
   p {
     font-weight: 400;
     font-size: 1.15rem;
     line-height: 1.6;
-    color: var(--color-text-muted);
+    color: var(--text-muted);
   }
 
-  /* --- Moments grid --- */
+  /* Moments grid */
   .moments-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
@@ -192,7 +176,6 @@
     gap: 16px;
     box-shadow: 0 8px 28px rgba(41, 121, 255, 0.3);
     transition: box-shadow 0.3s ease;
-    cursor: default;
   }
   .moment-card:hover {
     box-shadow: 0 14px 40px rgba(41, 121, 255, 0.5);
@@ -208,7 +191,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color: var(--color-text-light);
+    color: var(--text-light);
   }
   .moment-text strong {
     font-size: 1.2rem;
@@ -217,10 +200,10 @@
   .moment-text p {
     margin: 0;
     font-size: 1rem;
-    color: var(--color-text-muted);
+    color: var(--text-muted);
   }
 
-  /* --- Stats grid --- */
+  /* Stats grid */
   .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
@@ -234,7 +217,6 @@
     text-align: center;
     box-shadow: 0 8px 26px rgba(41, 121, 255, 0.35);
     transition: transform 0.3s ease;
-    cursor: default;
   }
   .stat-card:hover {
     transform: translateY(-8px);
@@ -242,15 +224,15 @@
   .stat-number {
     font-weight: 800;
     font-size: 2.6rem;
-    color: var(--color-accent);
+    color: var(--accent-blue);
   }
   .stat-label {
     font-weight: 600;
     font-size: 1.1rem;
-    color: var(--color-text-muted);
+    color: var(--text-muted);
   }
 
-  /* --- Gallery --- */
+  /* Gallery */
   .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
@@ -270,7 +252,7 @@
     transform: scale(1.07);
   }
 
-  /* --- Video --- */
+  /* Video */
   .video-wrapper {
     position: relative;
     padding-bottom: 56.25%;
@@ -287,17 +269,17 @@
     border-radius: var(--radius);
   }
 
-  /* --- Contact --- */
+  /* Contact */
   #contact {
-    background: var(--color-bg-light);
+    background: var(--bg-light);
     border-radius: var(--radius);
     padding: 40px 35px;
-    box-shadow: 0 10px 35px var(--shadow);
+    box-shadow: 0 10px 35px rgba(41, 121, 255, 0.5);
     text-align: center;
   }
   #contact p {
     font-size: 1.1rem;
-    color: var(--color-text-muted);
+    color: var(--text-muted);
     max-width: 700px;
     margin: 0 auto 25px auto;
   }
@@ -308,27 +290,27 @@
   }
   #contact .social-links a {
     display: inline-block;
-    background: var(--color-accent);
+    background: var(--accent-blue);
     padding: 10px 22px;
     border-radius: var(--radius);
     font-weight: 700;
     color: white;
-    box-shadow: 0 6px 20px var(--shadow);
+    box-shadow: 0 6px 20px rgba(41, 121, 255, 0.5);
     transition: background-color 0.3s ease;
   }
   #contact .social-links a:hover {
     background-color: #5393ff;
   }
 
-  /* --- Footer --- */
+  /* Footer */
   footer {
     text-align: center;
     padding: 20px 15px;
     font-size: 0.9rem;
-    color: var(--color-text-muted);
+    color: var(--text-muted);
   }
 
-  /* --- Responsive --- */
+  /* Responsive */
   @media (max-width: 900px) {
     header.hero {
       min-height: 50vh;
@@ -432,4 +414,20 @@
       </article>
       <article class="moment-card" tabindex="0">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/CR7_Scorer_Ligue_des_Champions.jpg" alt="Cristiano Ronaldo marquant un but" class="moment-image" />
-       
+        <div class="moment-text">
+          <strong>Plus de 940 buts</strong>
+          <p>Un des meilleurs buteurs de l’histoire du football.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="stats" tabindex="0" aria-labelledby="stats-title">
+    <h2 id="stats-title">Statistiques</h2>
+    <div class="stats-grid">
+      <div class="stat-card" tabindex="0">
+        <div class="stat-number">800+</div>
+        <div class="stat-label">Matchs joués</div>
+      </div>
+      <div class="stat-card" tabindex="0">
+        <div class="
