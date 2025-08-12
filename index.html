@@ -7,7 +7,7 @@
 <style>
   body {
     margin: 0; padding: 0;
-    background: linear-gradient(135deg, #121212 0%, #2c2c3a 100%);
+    background: linear-gradient(135deg, #121212 0%, #1e1e2f 100%);
     color: #e0e0e0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
@@ -24,7 +24,7 @@
     z-index: 1000;
   }
   nav a {
-    color: #a3c9ff;
+    color: #83c7ff;
     font-weight: 600;
     text-decoration: none;
     padding-bottom: 4px;
@@ -32,12 +32,12 @@
     transition: border-color 0.3s ease;
   }
   nav a:hover, nav a:focus {
-    border-bottom-color: #87aaff;
+    border-bottom-color: #00bfff;
   }
   header {
     padding: 90px 20px 40px 20px;
-    background: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...") no-repeat center/cover;
-    color: #86a8e7;
+    background: url("https://i.imgur.com/8jFzssB.jpg") no-repeat center/cover;
+    color: #6eb8ff;
     text-shadow: 0 0 12px rgba(0,0,0,0.9);
     min-height: 60vh;
     display: flex;
@@ -51,7 +51,7 @@
   header p.intro {
     max-width: 700px;
     font-size: 1.3rem;
-    color: #becffacc;
+    color: #b5d7ffcc;
   }
   main {
     max-width: 960px;
@@ -63,13 +63,13 @@
     padding: 30px;
     border-radius: 15px;
     background-color: #222236;
-    box-shadow: 0 0 25px rgba(120,130,220,0.3);
+    box-shadow: 0 0 25px rgba(0,191,255,0.3);
   }
   section:nth-child(even) {
-    background-color: #2f3048;
+    background-color: #1a1a2d;
   }
   section h2 {
-    color: #9ec1ff;
+    color: #4ec1ff;
     margin-top: 0;
     font-weight: 700;
     font-size: 2rem;
@@ -88,7 +88,7 @@
   .gallery img {
     width: calc(33% - 10px);
     border-radius: 12px;
-    box-shadow: 0 0 18px #7a90ffbb;
+    box-shadow: 0 0 18px #00bfffcc;
     object-fit: cover;
     height: 140px;
     transition: transform 0.3s ease;
@@ -96,7 +96,7 @@
   }
   .gallery img:hover, .gallery img:focus {
     transform: scale(1.12);
-    box-shadow: 0 0 28px #a6bbffcc;
+    box-shadow: 0 0 28px #00d4ffcc;
   }
   /* Stats */
   .stats {
@@ -107,25 +107,40 @@
   }
   .stat {
     flex: 1 1 140px;
-    background: #3b3c60;
+    background: #003a6d;
     padding: 25px;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 0 22px #7a90ffcc;
+    box-shadow: 0 0 22px #00bfffcc;
   }
   .stat-number {
     font-size: 3rem;
-    color: #a3c9ff;
+    color: #83d1ff;
     font-weight: 700;
   }
   .stat-label {
     margin-top: 10px;
     font-size: 1.2rem;
-    color: #becffa;
+    color: #a3e1ff;
+  }
+  /* Video */
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 0 30px #00bfffcc;
+  }
+  .video-wrapper iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
   }
   /* Contact */
   #contact p a {
-    color: #87aaff;
+    color: #4ec1ff;
     font-weight: 600;
     text-decoration: none;
   }
@@ -187,9 +202,9 @@
   <section id="exploits">
     <h2>Exploits marquants</h2>
     <div class="gallery" tabindex="0" aria-label="Galerie photos de Ronaldo">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD..." alt="Cristiano Ronaldo célébration" />
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD..." alt="Cristiano Ronaldo en action" />
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD..." alt="Cristiano Ronaldo tir au but" />
+      <img src="https://i.imgur.com/2nCt3Sbl.jpg" alt="Cristiano Ronaldo célébration" />
+      <img src="https://i.imgur.com/LdE94bCl.jpg" alt="Cristiano Ronaldo en action" />
+      <img src="https://i.imgur.com/gLlF5Ibl.jpg" alt="Cristiano Ronaldo tir au but" />
     </div>
   </section>
 
@@ -214,19 +229,21 @@
   <section id="galerie">
     <h2>Galerie</h2>
     <div class="gallery" tabindex="0" aria-label="Galerie photos supplémentaires de Ronaldo">
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD..." alt="Cristiano Ronaldo portrait" />
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD..." alt="Cristiano Ronaldo en action" />
-      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD..." alt="Ronaldo célébrant un but" />
+      <img src="https://i.imgur.com/LdE94bCl.jpg" alt="Cristiano Ronaldo portrait" />
+      <img src="https://i.imgur.com/gLlF5Ibl.jpg" alt="Cristiano Ronaldo en action" />
+      <img src="https://i.imgur.com/2nCt3Sbl.jpg" alt="Ronaldo célébrant un but" />
     </div>
   </section>
 
   <section id="video">
     <h2>Vidéo</h2>
-    <p>
-      <a href="https://www.youtube.com/watch?v=BZd6U4GepXc" target="_blank" rel="noopener noreferrer" style="color:#87aaff; font-weight:600; text-decoration:none;">
-        Voir la compilation des meilleurs buts de Cristiano Ronaldo sur YouTube
-      </a>
-    </p>
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/BZd6U4GepXc" 
+        title="Compilation des meilleurs buts de Cristiano Ronaldo" 
+        allowfullscreen 
+        loading="lazy"></iframe>
+    </div>
   </section>
 
   <section id="contact">
