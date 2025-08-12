@@ -5,12 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CR7 - Ronaldo Fan Site</title>
 <style>
+  /* RESET et base */
   body {
     margin: 0; padding: 0;
-    background-color: #0b1c3f;
+    background-color: #0b1c3f; /* Fond bleu nuit */
     color: #e6eaf0;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
   }
+  /* Navigation fixe, scroll horizontal si overflow */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -23,95 +26,126 @@
     z-index: 1000;
   }
   nav a {
-    color: #2979ff;
-    font-weight: bold;
+    color: #72aaff;
+    font-weight: 600;
     text-decoration: none;
     padding-bottom: 4px;
     border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
   }
   nav a:hover {
-    border-bottom-color: #5393ff;
+    border-bottom-color: #a4c8ff;
   }
+  /* Header avec image de fond */
   header {
-    padding: 80px 20px 20px 20px;
-    background: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Cristiano_Ronaldo_2022_%28cropped%29.jpg") no-repeat center/cover;
-    color: #2979ff;
-    text-shadow: 0 0 10px black;
+    padding: 80px 20px 40px 20px;
+    background: url("https://images.unsplash.com/photo-1547573865-6c3d490abf76?auto=format&fit=crop&w=1350&q=80") no-repeat center/cover;
+    color: #5ea1ff;
+    text-shadow: 0 0 10px rgba(0,0,0,0.9);
     min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   header h1 {
     margin: 0 0 15px;
     font-size: 3rem;
   }
-  header p {
-    max-width: 600px;
+  header p.intro {
+    max-width: 650px;
     font-size: 1.2rem;
-    line-height: 1.4;
+    color: #a1baffcc;
   }
+  /* Main content centré */
   main {
     max-width: 900px;
-    margin: 30px auto;
-    padding: 0 15px 40px;
+    margin: 30px auto 60px;
+    padding: 0 15px;
   }
+  /* Sections alternées en couleurs douces */
   section {
     margin-bottom: 50px;
-    background: #132c6b;
-    border-radius: 12px;
     padding: 25px;
-    box-shadow: 0 0 20px rgba(41, 121, 255, 0.4);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(41, 121, 255, 0.4);
+  }
+  section:nth-child(odd) {
+    background: #1b2d6d;
+  }
+  section:nth-child(even) {
+    background: #223f8d;
   }
   section h2 {
-    color: #5393ff;
+    color: #a1c9ff;
     margin-top: 0;
+    font-weight: 700;
   }
+  /* Galerie flexible */
   .gallery {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
+    justify-content: center;
   }
   .gallery img {
     width: calc(33% - 8px);
     border-radius: 10px;
-    box-shadow: 0 0 10px #2979ff;
+    box-shadow: 0 0 15px #5ea1ffbb;
     object-fit: cover;
     height: 120px;
+    transition: transform 0.3s ease;
   }
+  .gallery img:hover {
+    transform: scale(1.1);
+  }
+  /* Statistiques en flex */
   .stats {
     display: flex;
-    gap: 25px;
+    gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
   }
   .stat {
-    flex: 1 1 120px;
-    background: #1e3a8a;
+    flex: 1 1 130px;
+    background: #154188;
     padding: 20px;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 0 15px #2979ff;
+    box-shadow: 0 0 18px #5ea1ffaa;
   }
   .stat-number {
-    font-size: 2.5rem;
-    color: #2979ff;
+    font-size: 2.8rem;
+    color: #72aaff;
     font-weight: 700;
   }
   .stat-label {
-    margin-top: 6px;
-    font-size: 1.1rem;
-    color: #b0bedf;
+    margin-top: 8px;
+    font-size: 1.15rem;
+    color: #aac6ffcc;
   }
+  /* Vidéo responsive */
   .video-wrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
     height: 0;
     overflow: hidden;
     border-radius: 12px;
-    box-shadow: 0 0 20px #2979ff;
+    box-shadow: 0 0 20px #72aaffcc;
   }
   .video-wrapper iframe {
     position: absolute;
     width: 100%;
     height: 100%;
     border: 0;
+  }
+  /* Liens sociaux */
+  #contact p a {
+    color: #72aaff;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  #contact p a:hover {
+    text-decoration: underline;
   }
 </style>
 </head>
@@ -131,23 +165,29 @@
 
 <header id="accueil">
   <h1>Cristiano Ronaldo - Légende du football</h1>
-  <p>Rapide, puissant, décisif — un champion au parcours exceptionnel. Découvrez ses exploits, records, et une vidéo exclusive.</p>
+  <p class="intro">
+    Cristiano Ronaldo, l’icône mondiale du football, reconnu pour sa vitesse, sa puissance et ses records incroyables.  
+    Depuis ses débuts modestes à Madère jusqu’à la gloire internationale, découvrez l’histoire d’un champion hors norme,  
+    ses exploits marquants, et son impact légendaire sur le football moderne.
+  </p>
 </header>
 
 <main>
   <section id="biographie">
     <h2>Biographie</h2>
-    <p>Né le 5 février 1985 à Funchal, Cristiano Ronaldo a débuté sa carrière au Sporting CP avant d’exploser à Manchester United. Véritable icône mondiale, il est reconnu pour sa discipline et ses records incroyables.</p>
+    <p>Né le 5 février 1985 à Funchal, Cristiano Ronaldo a commencé au Sporting CP avant de briller à Manchester United et Real Madrid.  
+      Sa rigueur et sa détermination ont façonné une carrière hors pair.</p>
   </section>
 
   <section id="real">
     <h2>Carrière au Real Madrid</h2>
-    <p>Arrivé en 2009, Ronaldo a marqué l'histoire du Real Madrid avec plus de 450 buts, 4 Ballons d’Or, et 4 Ligues des Champions, devenant un des meilleurs joueurs de l'histoire du club.</p>
+    <p>Recruté en 2009, Ronaldo est devenu le meilleur buteur historique du club, avec plus de 450 buts, plusieurs Ballons d’Or,  
+      et une domination absolue en Liga et en Ligue des Champions.</p>
   </section>
 
   <section id="saison2008">
     <h2>Saison 2008 - Année exceptionnelle</h2>
-    <p>Cette année-là, il remporte la Premier League, la Ligue des Champions et son premier Ballon d’Or, confirmant son statut de superstar mondiale.</p>
+    <p>En 2008, il remporte la Premier League, la Ligue des Champions et son premier Ballon d’Or, marquant son entrée dans la légende.</p>
   </section>
 
   <section id="exploits">
