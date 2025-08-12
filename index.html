@@ -5,11 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>CR7 - Ronaldo Fan Site</title>
 <style>
-  /* Reset */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
   body {
     margin: 0; padding: 0;
     background: linear-gradient(135deg, #121212 0%, #2c2c3a 100%);
@@ -41,7 +36,7 @@
   }
   header {
     padding: 90px 20px 40px 20px;
-    background: url("https://cdn.pixabay.com/photo/2019/07/12/21/41/ronaldo-4335917_960_720.jpg") no-repeat center/cover;
+    background: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD...") no-repeat center/cover;
     color: #86a8e7;
     text-shadow: 0 0 12px rgba(0,0,0,0.9);
     min-height: 60vh;
@@ -128,21 +123,6 @@
     font-size: 1.2rem;
     color: #becffa;
   }
-  /* Vidéo */
-  .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 0 30px #8fa1ffbb;
-  }
-  .video-wrapper iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
   /* Contact */
   #contact p a {
     color: #87aaff;
@@ -207,9 +187,9 @@
   <section id="exploits">
     <h2>Exploits marquants</h2>
     <div class="gallery" tabindex="0" aria-label="Galerie photos de Ronaldo">
-      <img src="https://cdn.pixabay.com/photo/2019/07/12/21/41/ronaldo-4335917_960_720.jpg" alt="Cristiano Ronaldo célébration" />
-      <img src="https://cdn.pixabay.com/photo/2018/07/16/15/47/cristiano-raldo-3540466_960_720.jpg" alt="Cristiano Ronaldo en action" />
-      <img src="https://cdn.pixabay.com/photo/2019/08/05/22/09/ronaldo-4382621_960_720.jpg" alt="Cristiano Ronaldo tir au but" />
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD..." alt="Cristiano Ronaldo célébration" />
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD..." alt="Cristiano Ronaldo en action" />
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD..." alt="Cristiano Ronaldo tir au but" />
     </div>
   </section>
 
@@ -234,21 +214,19 @@
   <section id="galerie">
     <h2>Galerie</h2>
     <div class="gallery" tabindex="0" aria-label="Galerie photos supplémentaires de Ronaldo">
-      <img src="https://cdn.pixabay.com/photo/2018/07/16/15/47/cristiano-raldo-3540466_960_720.jpg" alt="Cristiano Ronaldo portrait" />
-      <img src="https://cdn.pixabay.com/photo/2019/08/05/22/09/ronaldo-4382621_960_720.jpg" alt="Cristiano Ronaldo en action" />
-      <img src="https://cdn.pixabay.com/photo/2019/07/12/21/41/ronaldo-4335917_960_720.jpg" alt="Ronaldo célébrant un but" />
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD..." alt="Cristiano Ronaldo portrait" />
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD..." alt="Cristiano Ronaldo en action" />
+      <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD..." alt="Ronaldo célébrant un but" />
     </div>
   </section>
 
   <section id="video">
     <h2>Vidéo</h2>
-    <div class="video-wrapper">
-      <iframe 
-        src="https://www.youtube.com/embed/BZd6U4GepXc" 
-        title="Compilation des meilleurs buts de Cristiano Ronaldo" 
-        allowfullscreen 
-        loading="lazy"></iframe>
-    </div>
+    <p>
+      <a href="https://www.youtube.com/watch?v=BZd6U4GepXc" target="_blank" rel="noopener noreferrer" style="color:#87aaff; font-weight:600; text-decoration:none;">
+        Voir la compilation des meilleurs buts de Cristiano Ronaldo sur YouTube
+      </a>
+    </p>
   </section>
 
   <section id="contact">
