@@ -10,7 +10,9 @@
     --bg1: #0a0a12;
     --bg2: #12121a;
     --blue-foudre: #2979ff;
-    --blue-light: #5c9eff;
+    --violet-foncé: #7c3aed;
+    --turquoise: #22d3ee;
+    --orange: #fb923c;
     --text-light: #e6eaf0;
     --text-muted: #a0a6b8;
     --panel: rgba(41, 121, 255, 0.08);
@@ -26,10 +28,12 @@
     color: var(--text-light);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
   }
   a {
-    color: var(--blue-foudre);
+    color: var(--text-light);
     text-decoration: none;
+    transition: color 0.3s ease;
   }
   a:hover,
   a:focus {
@@ -38,7 +42,7 @@
   .wrap {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 20px 15px 40px;
+    padding: 20px 15px 60px;
   }
   /* NAV */
   nav {
@@ -91,13 +95,27 @@
     font-size: 1rem;
     color: var(--text-light);
     padding: 6px 0;
-    transition: color 0.3s ease;
     white-space: nowrap;
-    display: block;
   }
-  nav ul li a:hover,
-  nav ul li a:focus {
+  nav ul li a.active-blue {
     color: var(--blue-foudre);
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  nav ul li a.active-violet {
+    color: var(--violet-foncé);
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  nav ul li a.active-turquoise {
+    color: var(--turquoise);
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  nav ul li a.active-orange {
+    color: var(--orange);
+    font-weight: 700;
+    text-decoration: underline;
   }
   /* HERO */
   header.hero {
@@ -169,16 +187,30 @@
   /* Sections */
   section {
     margin-top: 50px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--panel);
+  }
+  section:last-child {
+    border-bottom: none;
   }
   h2.section-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 2.4rem;
-    border-bottom: 3px solid var(--blue-foudre);
     padding-bottom: 8px;
     max-width: fit-content;
     margin-bottom: 18px;
   }
+  /* Section accents */
+  #biographie h2 { color: var(--blue-foudre); }
+  #real h2 { color: var(--violet-foncé); }
+  #saison2008 h2 { color: var(--turquoise); }
+  #exploits h2 { color: var(--orange); }
+  #stats h2 { color: var(--blue-foudre); }
+  #galerie h2 { color: var(--violet-foncé); }
+  #video h2 { color: var(--turquoise); }
+  #contact h2 { color: var(--orange); }
+
   .section-content {
     max-width: var(--max-width);
   }
@@ -331,7 +363,6 @@
     margin-top: 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: var(--blue-foudre);
   }
   #contact p {
     color: var(--text-muted);
@@ -399,8 +430,8 @@
 <body>
 <nav role="navigation" aria-label="Menu principal">
   <div class="logo" tabindex="0">CR7</div>
-  <ul>
-    <li><a href="#accueil">Accueil</a></li>
+  <ul id="nav-links">
+    <li><a href="#accueil" class="active-blue">Accueil</a></li>
     <li><a href="#biographie">Biographie</a></li>
     <li><a href="#real">Real Madrid</a></li>
     <li><a href="#saison2008">Saison 2008</a></li>
@@ -430,15 +461,4 @@
 <main class="wrap" role="main">
   <section id="biographie" tabindex="0" aria-labelledby="biographie-title">
     <h2 class="section-title" id="biographie-title">Biographie</h2>
-    <p class="text-block">Cristiano Ronaldo dos Santos Aveiro est né le 5 février 1985 à Funchal, Madère, Portugal. Dès son plus jeune âge, il montre un talent exceptionnel pour le football. Repéré par le Sporting CP, il rejoint l'académie du club et fait ses débuts professionnels en 2002. Son jeu explosif et sa capacité à marquer attirent rapidement l'attention des plus grands clubs européens.</p>
-    <p class="text-block">Après une saison remarquable au Sporting, il est recruté par Manchester United en 2003. C'est là qu'il se transforme en star mondiale, remportant de nombreux titres et son premier Ballon d'Or en 2008. Son transfert record au Real Madrid en 2009 marque le début d'une ère légendaire, avec des records de buts et une domination européenne sans précédent.</p>
-  </section>
-
-  <section id="real" tabindex="0" aria-labelledby="real-title">
-    <h2 class="section-title" id="real-title">Carrière au Real Madrid</h2>
-    <p class="text-block">Cristiano Ronaldo a rejoint le Real Madrid en 2009 pour une somme record à l’époque. Pendant neuf saisons, il inscrit 450 buts en 438 matchs, devenant le meilleur buteur de l'histoire du club. Sa puissance, sa technique et sa rigueur font de lui un joueur incontournable. Il remporte notamment 4 Ligue des Champions et 2 titres de Liga.</p>
-    <p class="text-block">Son passage au Real Madrid est marqué par de nombreuses performances individuelles exceptionnelles, notamment plusieurs saisons à plus de 50 buts, et une présence constante dans les moments clés des grandes compétitions.</p>
-  </section>
-
-  <section id="saison2008" tabindex="0" aria-labelledby="saison2008-title">
-    <h2 class="section-title" id="saison2008-title">Saison exceptionnelle 2007–2008</h2>
+    <p class="text-block">Cristiano Ronaldo dos Santos Aveiro est né le 5 février 1985 à Funchal, Madère, Portugal. Dès son plus jeune âge, il montre un talent exceptionnel pour le football. Repéré par le
