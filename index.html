@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <title>CR7 — Cristiano Ronaldo Fan Site</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Playfair+Display:wght@600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
 <style>
@@ -50,24 +50,41 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 25px;
+    padding: 10px 15px;
     z-index: 999;
     box-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--blue-foudre) transparent;
+  }
+  nav::-webkit-scrollbar {
+    height: 6px;
+  }
+  nav::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  nav::-webkit-scrollbar-thumb {
+    background-color: var(--blue-foudre);
+    border-radius: 10px;
   }
   nav .logo {
+    flex-shrink: 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
     font-size: 1.5rem;
     color: var(--blue-foudre);
     user-select: none;
+    padding-right: 15px;
   }
   nav ul {
     list-style: none;
     display: flex;
     gap: 25px;
     margin: 0; padding: 0;
+    flex-wrap: nowrap;
   }
   nav ul li {
+    flex-shrink: 0;
   }
   nav ul li a {
     font-weight: 600;
@@ -75,6 +92,8 @@
     color: var(--text-light);
     padding: 6px 0;
     transition: color 0.3s ease;
+    white-space: nowrap;
+    display: block;
   }
   nav ul li a:hover,
   nav ul li a:focus {
@@ -123,6 +142,13 @@
     line-height: 1.5;
     margin-bottom: 25px;
     color: var(--text-muted);
+  }
+  header.hero .hero-content p.more-text {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 10px;
+    max-height: 200px;
+    overflow-y: auto;
   }
   header.hero .hero-buttons a {
     display: inline-block;
@@ -389,6 +415,11 @@
   <div class="hero-content">
     <h1>Cristiano Ronaldo — Légende du football</h1>
     <p>Rapide, puissant, décisif — Un champion au parcours exceptionnel.</p>
+    <p class="more-text">Cristiano Ronaldo, surnommé CR7, est non seulement l’un des plus grands footballeurs de tous les temps, mais aussi un véritable phénomène culturel mondial.  
+    Sa carrière remarquable s’étend sur plus de 20 ans, avec une discipline de fer, un travail acharné et une passion inégalée pour le football.  
+    Sa polyvalence lui permet de jouer à plusieurs postes offensifs avec une efficacité redoutable.  
+    Il est également une icône en dehors du terrain, influençant la mode, la philanthropie et inspirant des millions de fans.  
+    Sur ce site, découvrez en détail ses exploits, ses records, et ce qui fait de lui une légende vivante du sport.</p>
     <div class="hero-buttons">
       <a href="#biographie">Découvrir sa biographie</a>
     </div>
@@ -410,22 +441,4 @@
 
   <section id="saison2008" tabindex="0" aria-labelledby="saison2008-title">
     <h2 class="section-title" id="saison2008-title">Saison exceptionnelle 2007–2008</h2>
-    <p class="text-block">La saison 2007–2008 est celle de la consécration pour Ronaldo avec Manchester United. Il marque plus de 40 buts toutes compétitions confondues, mène son équipe au titre de Premier League et remporte la Ligue des Champions. Ses dribbles, sa vitesse et ses frappes puissantes impressionnent tous les observateurs. Il reçoit son premier Ballon d’Or cette année-là.</p>
-  </section>
-
-  <section id="exploits" tabindex="0" aria-labelledby="exploits-title">
-    <h2 class="section-title" id="exploits-title">Exploits marquants</h2>
-    <div class="moments-grid">
-      <article class="moment-card" tabindex="0">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Cristiano_Ronaldo_celebration_2008.jpg" alt="Célébration Ronaldo 2008" class="moment-image" loading="lazy" />
-        <div class="moment-text">
-          <strong>2008 — Premier Ballon d'Or</strong>
-          <p>Une saison remarquable avec Manchester United, Ronaldo explose et devient la nouvelle star mondiale du football.</p>
-        </div>
-      </article>
-
-      <article class="moment-card" tabindex="0">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Real_Madrid_2014_vs_Atletico_Madrid_Cristiano_Ronaldo_celebration_2014.jpg" alt="Célébration Ronaldo Real Madrid 2014" class="moment-image" loading="lazy" />
-        <div class="moment-text">
-          <strong>2014 — Quatrième Ligue des Champions</strong>
-          <p>Ronaldo mène le Real Madrid à une victoire éclatante en finale, inscrivant un doublé déc
+    <p class="text-block">La saison 2007–2008 est celle de la consécration pour Ronaldo avec Manchester United. Il marque plus de 40 buts toutes compétitions confondues, mène son équipe au titre de Premier League et remporte la Ligue des Champions. Ses dribbles, sa vitesse
