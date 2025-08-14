@@ -3,72 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CR7</title>
+    <title>Cristiano Ronaldo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #0a0f24;
-            color: white;
+            background-color: #f4f4f4;
         }
         header {
-            background-color: #0f172a;
-            padding: 15px 0;
+            background-color: #003366;
+            color: white;
+            padding: 20px;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        }
+        nav {
+            background-color: #002244;
+            overflow-x: auto;
+            white-space: nowrap;
         }
         nav a {
-            color: #cbd5e1;
+            display: inline-block;
+            color: white;
+            padding: 14px 20px;
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
         }
         nav a:hover {
-            color: white;
+            background-color: #0055aa;
         }
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: auto;
+        section {
             padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .card {
-            background-color: #1e293b;
+            background-color: white;
+            margin: 20px;
             border-radius: 10px;
-            overflow: hidden;
-            text-align: center;
-            transition: transform 0.2s;
         }
-        .card:hover {
-            transform: scale(1.05);
+        h2 {
+            color: #003366;
         }
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .card p {
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.6);
-            position: relative;
-            bottom: 0;
-            font-weight: bold;
+        img {
+            max-width: 100%;
+            border-radius: 10px;
         }
         iframe {
-            display: block;
-            margin: 30px auto;
+            width: 100%;
+            height: 315px;
             border-radius: 10px;
         }
     </style>
@@ -76,34 +54,62 @@
 <body>
 
 <header>
-    <nav>
-        <a href="#">Accueil</a>
-        <a href="#">Biographie</a>
-        <a href="#">Real Madrid</a>
-        <a href="#">Saison 2025</a>
-    </nav>
+    <h1>Cristiano Ronaldo</h1>
+    <p>Découvrez le parcours exceptionnel du joueur légendaire</p>
 </header>
 
-<div class="container">
-    <h1>Galerie CR7</h1>
-    <div class="gallery">
-        <div class="card">
-            <img src="https://i.imgur.com/TqZV2aL.jpg" alt="CR7">
-            <p>CR7</p>
-        </div>
-        <div class="card">
-            <img src="https://i.imgur.com/lE89F6b.jpg" alt="Real Madrid">
-            <p>Real Madrid</p>
-        </div>
-        <div class="card">
-            <img src="https://i.imgur.com/8bY2rV5.jpg" alt="Portugal">
-            <p>Portugal</p>
-        </div>
-    </div>
+<nav>
+    <a href="#bio">Biographie</a>
+    <a href="#s2008">Saison 2008</a>
+    <a href="#exploits">Exploits marquants</a>
+    <a href="#stats">Statistiques</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#video">Vidéo</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-    <h1>Moments forts</h1>
-    <iframe width="100%" height="415" src="https://www.youtube.com/embed/FrPwwUF7jbU" title="Moments forts CR7" frameborder="0" allowfullscreen></iframe>
-</div>
+<section id="bio">
+    <h2>Biographie</h2>
+    <p>Cristiano Ronaldo est un footballeur portugais né le 5 février 1985 à Madère. Il est considéré comme l’un des meilleurs joueurs de l’histoire du football, ayant remporté de nombreux titres et distinctions individuelles.</p>
+</section>
+
+<section id="s2008">
+    <h2>Saison 2008</h2>
+    <p>Lors de la saison 2007-2008 avec Manchester United, Ronaldo a marqué 42 buts toutes compétitions confondues, remportant la Premier League et la Ligue des Champions.</p>
+</section>
+
+<section id="exploits">
+    <h2>Exploits marquants</h2>
+    <ul>
+        <li>5 Ballons d'Or</li>
+        <li>Champion d'Europe avec le Portugal en 2016</li>
+        <li>Meilleur buteur de l'histoire de la Ligue des Champions</li>
+    </ul>
+</section>
+
+<section id="stats">
+    <h2>Statistiques</h2>
+    <p>Buts en carrière : plus de 850<br>
+       Passes décisives : plus de 250<br>
+       Sélections avec le Portugal : 200+</p>
+</section>
+
+<section id="galerie">
+    <h2>Galerie</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" alt="Cristiano Ronaldo 1">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Cristiano_Ronaldo_WC2018.jpg" alt="Cristiano Ronaldo 2">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Cristiano_Ronaldo_Euro_2016.jpg" alt="Cristiano Ronaldo 3">
+</section>
+
+<section id="video">
+    <h2>Vidéo</h2>
+    <iframe src="https://www.youtube.com/embed/FrPwwUF7jbU" frameborder="0" allowfullscreen></iframe>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Pour toute demande, veuillez envoyer un e-mail à : <a href="mailto:contact@cr7.com">contact@cr7.com</a></p>
+</section>
 
 </body>
 </html>
